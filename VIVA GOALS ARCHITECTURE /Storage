@@ -1,0 +1,33 @@
+Azure postgreSQL- citus :
+    it is primary datastore used in Viva goals. it is sql based. The data in PG is 
+    sharded based on the tenant ID.
+
+Azure cosmos DB:
+    Viva Goals uses Azure cosmos DB as a cache for serialized object data from postgres.
+    For example, when the client requests for the list of checkins of a given objective, 
+    the application searches for the same in Cosmos and returns the data if it is present.
+    Otherwise, it fetches the data from PG to construct the response, caches the same in 
+    Cosmos for future requests.  
+
+Azure Cognitive Search:
+    it us used as a earch engine for Viva goals.  The application caches objectives and 
+    their related information such as owner etc., and tags in Azure Cognitive search.
+    When the end user searches (free text search + filters) for an objective, the application 
+    uses Cognitive Search to fetch the list of objectives that match the search term and returns 
+    the response to the end user. 
+
+Azure Cache for Redis:
+    Azure Cache for Redis is used to store asynchronous job information required by Sidekiq within 
+    Viva Goals. Sidekiq is a job processing engine than processes jobs asynchronously in parallel threads.
+    Jobs are queued into Sidekiq from the main application. Sidekiq uses to store the job information 
+    in Redis and later retrieves and processes it. Post processing, it deletes the information from Redis. 
+
+Application Insights => Backend exception traces 
+
+Geneva => Logs, exceptions, traces etc. 
+
+Service Health Dashboard => Health of the service 
+
+ARIA/IDEAS => Event Telemetry 
+
+ 

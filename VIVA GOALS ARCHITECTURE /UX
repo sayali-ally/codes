@@ -1,0 +1,4 @@
+Viva Goals is a Single Page Application (SPA) written in AngularJS. When the user accesses 
+the application from a browser (client) or MS Teams app, the application is loaded from the CDN in Frontdoor.
+
+Viva Goals SPA is a hybrid application primarily written in AngularJS (1.x version) along with embedded React components.

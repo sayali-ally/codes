@@ -1,0 +1,27 @@
+Azure frontdoor premium: 
+    Acts as a single point of entry for all the web requests to Viva Goals app from the web app 
+    as well as other surfaces such as teams
+
+Azure Kubernetes Service: 
+    The backend of the Viva goals application is hosted on AKS. the application code is run in containers 
+    within pods in AKS.Currently the following type of pods are run for viva goals app:
+    i. web pods
+    ii. worder pods
+    iii. cron jobs 
+
+Azure key Vaults :
+    Azure key vaults are used to store: secrets
+    The secret required for the application to boot or work are stored in the key vault and are retrieved from the 
+    key vault at the runtime.
+
+AAD and Graph :
+    Viva goals uses AAd for Authentication. Users login into Viva goals Via AAD. This is powered using the MSAL library coupled with the 1P Application.
+
+Azure Web Pub Sub:
+    It is used by VGA to send updates in real time to the client. and ensuring that the user always sees the updated information without refreshing the page. for example assure 2 users who are viewing the same OKR from their browsers. When one of them updates, the other gets the up to date info in his own browser.
+
+Azure Blob Storage:
+    VGA stores the blob contents like user's profile pic,file export in the Azure blob storage.
+
+Microsoft Email Orchestrator: (MEO)
+    It is used to send emails to end users from VGA. 

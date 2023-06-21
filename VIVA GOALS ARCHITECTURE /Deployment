@@ -1,0 +1,17 @@
+Viva Goals follows a rings-based deployment model.
+The deployment pipeline MUST support very quick hot fix deployments for high priority issues 
+
+All features MUST be shipped to both Viva Goals and legacy Ally customers, 
+unless explicitly approved by Viva Goals LT. 
+
+The development and deployment pipeline MUST be secure and compliant with Trust needs.  
+
+Azure_Production  - This will be the base branch for all the changes deployed to Azure instances.  
+Release Candidate branches in different environments (DF, SIP, Prod) - Each environment will have a different release build as each build progresses through rings of deployment. Each RC that goes to Prod rings will be preserved for future hotfix needs.  
+
+RSpecs 100% Pass 
+Static code analysis – Brakeman + Codeql with 0 violations 
+Cred scan with 0 violations 
+Codeql with 0 violation 
+P0 tests with100% Pass 
+P1 tests with 100% Pass 

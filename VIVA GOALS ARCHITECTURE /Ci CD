@@ -1,0 +1,17 @@
+This deck would help in understanding the CI-CD workflows used in VivaGoals
+to enable the engineers to deploy applications on demand all by themselves. ​
+
+Test pipelines (Backend & Frontend tests)​
+Build pipelines​
+Release pipelines​
+
+Mandatory frontend as well as backend tests 
+SDL Jobs
+Ci-CD flows 
+
+It is a software development approach that focuses on automating the process of integrating code changes into a shared repository, testing those changes, and deploying them to production in a consistent and frequent manner.
+
+Continuous Integration (CI) is the practice of frequently merging code changes from multiple developers into a central repository. This process typically involves using a version control system (such as Git) and an automated build system (such as Jenkins, Travis CI, or GitLab CI/CD). Each time a developer commits their changes, the CI system automatically builds the software, runs tests, and notifies the team of any issues. The goal of CI is to identify integration problems early and ensure that the software is always in a releasable state.
+
+Continuous Deployment (CD) or Continuous Delivery (CD) extends CI by automating the deployment of the software to production environments. With CD, once the code changes pass all tests in the CI pipeline, they can be automatically deployed to staging or production environments without manual intervention. CD helps streamline the release process, reduce the risk of human error, and enables faster time-to-market for software updates.
+

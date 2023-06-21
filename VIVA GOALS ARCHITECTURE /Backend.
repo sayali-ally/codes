@@ -1,0 +1,49 @@
+The Main Application of the Viva Goals is written in Ruby on Rails (RoR) framework. 
+The main application is a monolith containing most of the code required to run the Viva 
+Goals web application. Ruby on Rails is a web application framework written in Ruby programming
+ language, that implements the Model-View-Controller (MVC) pattern. 
+ Ruby on Rails offers a wide range of libraries inbuilt that help in different functionalities such as :
+
+Active Record – an Object Relational Mapping (ORM) framework to connect and execute queries in SQL databases seamlessly. 
+Framework to support schema and data migrations 
+Middleware to monitor and update web requests 
+Routes to control the routing of web requests to specific controllers 
+ActionController – that receives the request and processes it appropriately as per business logic and sends responses back 
+Models – that ensure the data is valid and also provides event callbacks 
+Jobs – background asynchronous job processing etc. 
+
+Background Job Processing 
+
+Background jobs are processed using Sidekiq which is a simple and efficient background job processor written 
+for Ruby applications. It uses Redis as the transient data store for storing and retrieving job information.
+ Non-blocking actions part of the web requests are often deferred to Sidekiq as jobs to ensure minimal web 
+ response time. For example, when an user tries to invite other users, the web request stores the information 
+ about the invite request during the request-response cycle, and defers the actual sending of the invitation 
+ emails to Sidekiq. Jobs are enqueued from web pods as well as other worker pods, and the job information 
+ is stored in Redis. Sidekiq workers run the same copy of the Viva Goals RoR Application, retrieves the 
+ jobs from Redis at near realtime, processes it and deletes the job from Redis post successful processing. 
+ Multiple worker pods of Sidekiq are run with the AKS cluster to handle the scale of jobs enqueued. 
+
+
+
+
+
+
+Scheduled Jobs 
+
+In addition to the near realtime background processing described above, there will be scenarios 
+in which certain jobs have to be run on a schedule. For example, notifying objective owners on a 
+weekly basis to check-in on the objectives that need updates etc. For such use cases, Viva Goals
+ runs scheduled cron jobs
+
+
+ Integration Connector Application 
+
+It is a mini web application microservice written in Python. It is not exposed to the web and 
+can only take requests from within the AKS cluster. Within Viva Goals, the user can enable data 
+integrations such as Snowflake, SQL server etc. on their objectives. The user provides the 
+credentials and the specific query to run to fetch the current value of the objective and make
+ automatic check-ins on the objective periodically. The primary use case for this application is 
+ to transparently query end user SQL databases with credentials and query provided by the end user.
+ 
+  
