@@ -18,3 +18,39 @@ c.then((data)=>{
 a+b=> 50
 
 
+function multiBytwo(num){
+    return new Promise((resolve,rej)=>{
+        setTimeout(()=>{
+            resolve(num*2);
+        },1000)
+    })
+}
+
+function addFive(num){
+    return new Promise((resolve,rej)=>{
+        setTimeout(()=>{
+            resolve(num+5);
+        },1500)
+    })
+}
+
+//usage
+multiBytwo(4)
+.then((res)=>addFive(res))
+.then((finalRes)=>{
+    console.log(finalRes)
+});
+
+
+
+
+function Age(age){
+    return new Promise((resolve,reject)=>{
+        if(age>=18){
+            resolve("access given");     -> success condition 
+        }
+        else{
+            reject("access denied");    -> failure condition
+        } 
+    })
+}

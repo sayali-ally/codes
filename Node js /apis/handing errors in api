@@ -1,0 +1,23 @@
+const express=require('express');
+const app=express();
+app.use(express.json());
+
+const handleError((err,req,res,next)=>{
+    console.log(err);   //log the error
+
+    res.status(500);   //set the status code to internal server error
+
+    res.json({
+        error: err.message,
+    });
+});
+
+// add the error handler to the app
+app.use(handleError);
+
+//create a route that will throw an error
+app.get('error',(req.res)=>{
+    console.log("this is an error");
+})
+
+app.listen(3000);

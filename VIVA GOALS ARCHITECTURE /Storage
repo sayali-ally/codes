@@ -10,7 +10,7 @@ Azure cosmos DB:
     Cosmos for future requests.  
 
 Azure Cognitive Search:
-    it us used as a earch engine for Viva goals.  The application caches objectives and 
+    it us used as a search engine for Viva goals.  The application caches objectives and 
     their related information such as owner etc., and tags in Azure Cognitive search.
     When the end user searches (free text search + filters) for an objective, the application 
     uses Cognitive Search to fetch the list of objectives that match the search term and returns 

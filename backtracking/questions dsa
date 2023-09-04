@@ -1,0 +1,39 @@
+Implement a Stack or Queue data structure and explain its operations and use cases.
+
+Write code to reverse a linked list.
+
+Given an array, find the maximum and minimum elements.
+
+How would you find if a given binary tree is a binary search tree (BST)?
+
+Implement a hash table (or dictionary) and discuss its time complexity for various operations.
+
+Solve a problem using a Breadth-First Search (BFS) or Depth-First Search (DFS) algorithm.
+
+Given two strings, find the longest common subsequence (LCS) between them.
+
+Write a function to check if a string is a palindrome.
+
+Solve a problem using recursion, and then optimize it using memoization or dynamic programming.
+
+Given an array of integers, find the two elements that sum up to a given target.
+
+Implement a sorting algorithm like Bubble Sort, Merge Sort, or Quick Sort, and analyze its time complexity.
+
+Design an algorithm to detect a cycle in a directed or undirected graph.
+
+Solve a problem using binary search, explaining the approach and time complexity.
+
+Write code to traverse a binary tree in preorder, inorder, or postorder.
+
+Implement a priority queue or a heap data structure.
+
+Given a list of intervals, write a function to merge overlapping intervals.
+
+Solve a problem using a sliding window or two-pointer technique.
+
+Design an algorithm to find the shortest path between two nodes in a graph.
+
+Solve a problem involving backtracking, such as finding all possible combinations or permutations.
+
+Explain the concept of time complexity and space complexity and their importance in algorithm analysis.

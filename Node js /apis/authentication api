@@ -1,0 +1,30 @@
+Here is an example of how basic authentication works in an API:
+
+const express=require('express');
+const app=express();
+const users=[
+  {id:1, username:username1,password: password1},
+  {id:2, username:username2,password: password2},
+  {id:3, username:username3,password: password3},
+]
+
+const authenticateUser=(req,res,next)=>{
+   const {username,password}=req.headers;
+
+   if(!username || !password){
+    res.status(401).json(error:{"Unauthorized"});
+   }
+
+   const user=users.find((u)=>u.username===username1 && u.password===password1);
+
+   if(!user){
+    res.status(401).json(message:{"not authenticated"});
+   }
+
+   req.user=user;
+   next();
+}
+
+app.get('api/ /',authenticateUser,(req,res)=>{
+  res.json({message:"The user is authenticated"}, user:req.user);
+});
